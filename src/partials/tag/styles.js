@@ -5,5 +5,6 @@ export default {
 		backgroundColor: '#aaa',
 		fontSize: 10,
 		color: '#fff',
+		padding: '0 4px',
 	},
 };

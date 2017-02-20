@@ -27,7 +27,7 @@ class SimpleTags extends Component {
 
     return (
       <div style={{ ...styles.box, ...boxStyle }}>
-        {tags.forEach((tag) => (
+        {tags.map((tag) => (
           <Tag 
             style={tagStyle}
             onClose={this.handleRemoveTag}
