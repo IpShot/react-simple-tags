@@ -1,8 +1,8 @@
 export default {
 	tag: {
-		border: '1px solid #4da',
+		border: '1px solid #aaa',
 		borderRadius: 3,
-		backgroundColor: '#4da',
+		backgroundColor: '#aaa',
 		fontSize: 10,
 		color: '#fff',
 	},

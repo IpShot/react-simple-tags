@@ -5,7 +5,13 @@ import Tag from './partials/tag';
 
 class SimpleTags extends Component {
 
-  handleTagClose(tag) {
+  handleAddTag(tag) {
+    const { tags, onChange } = this.props;
+    const newTags = tags.slice().push(tag);
+    onChange(newTags);
+  }
+
+  handleRemoveTag(tag) {
     const { tags, onChange } = this.props;
     const newTags = tags.slice();
     newTags.splice(tags.indexOf(tag), 1);
@@ -24,7 +30,7 @@ class SimpleTags extends Component {
         {tags.forEach((tag) => (
           <Tag 
             style={tagStyle}
-            onClose={this.handleTagClose}
+            onClose={this.handleRemoveTag}
           >
             {tag}
           </Tag>
