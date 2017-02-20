@@ -6,7 +6,7 @@ import { Container } from './utils';
 
 storiesOf('SimpleTags', module)
   .add('default', () => {
-    let tags = ['1', '2', '3'];
+    let tags = ['Goofy', 'Fox', 'Asteroid'];
     return (
       <Container>
         <SimpleTags 

@@ -6,6 +6,6 @@ export default {
 		borderRadius: 3,
 		backgroundColor: '#fff',
 		fontSize: 15,
-		padding: 9,
+		padding: 7,
 	},
 };
