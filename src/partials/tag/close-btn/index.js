@@ -1,13 +1,14 @@
 import React, { PropTypes } from 'react';
-import styles from './styles';
+import cn from 'classnames';
+import style from './style.css';
 
 
 const X = ({
+  className,
   onClick,
-  style,
 }) => (
   <span 
-    style={{ ...styles.close, ...style }}
+    className={cn(style.btn, className)}
     onClick={onClick}
   >
     &#215;
@@ -15,13 +16,13 @@ const X = ({
 );
 
 X.propTypes = {
+  className: PropTypes.object,
   onClick: PropTypes.func,
-  style: PropTypes.object,
 };
 
 X.defaultProps = {
+  className: '',
   onClick: () => null,
-  style: {},
 };
 
 export default X;

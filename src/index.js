@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import styles from './styles';
+import cn from 'classnames';
+import style from './style.css';
 import Tag from './partials/tag';
 
 
@@ -21,16 +22,15 @@ class SimpleTags extends Component {
   render() {
     const {
       tags,
-      boxStyle,
-      tagStyle,
+      className,
     } = this.props;
 
     return (
-      <div style={{ ...styles.box, ...boxStyle }}>
+      <div className={cn(style.box, className.box)}>
         {tags.map((tag, idx) => (
           <Tag 
             key={idx}
-            style={tagStyle}
+            className={className.tag}
             onClose={this.handleRemoveTag}
           >
             {tag}
@@ -43,16 +43,14 @@ class SimpleTags extends Component {
 
 SimpleTags.propTypes = {
   tags: PropTypes.array,
+  className: PropTypes.object,
   onChange: PropTypes.func,
-  boxStyle: PropTypes.object,
-  tagStyle: PropTypes.object,
 };
 
 SimpleTags.defaultProps = {
   tags: [],
+  className: {},
   onChange: () => [], 
-  boxStyle: {},
-  tagStyle: {},
 };
 
 export default SimpleTags;

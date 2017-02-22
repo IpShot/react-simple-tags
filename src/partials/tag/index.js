@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
+import cn from 'classnames';
 import X from './close-btn';
-import styles from './styles';
+import style from './style.css';
 
 
 class Tag extends Component {
@@ -11,12 +12,12 @@ class Tag extends Component {
   }
 
   render() {
-    const { children, style } = this.props;
+    const { children, className } = this.props;
     return (
-      <div style={{ ...styles.tag, ...style.tag }}>
+      <div className={cn(style.tag, className.tag)}>
         {children}
         <X
-          style={{ ...style.close }}
+          className={className.close}
           onClick={this.handleCloseClick}
         />
       </div>
@@ -26,13 +27,13 @@ class Tag extends Component {
 
 Tag.propTypes = {
   children: PropTypes.string.isRequired,
+  className: PropTypes.object,
   onClose: PropTypes.func,
-  style: PropTypes.object,
 };
 
 Tag.defaultProps = {
+  className: {},
   onClose: () => null,
-  style: {},
 };
 
 export default Tag;
