@@ -5,13 +5,13 @@ import Tag from './partials/tag';
 
 class SimpleTags extends Component {
 
-  handleAddTag(tag) {
+  handleAddTag = (tag) => {
     const { tags, onChange } = this.props;
     const newTags = tags.slice().push(tag);
     onChange(newTags);
   }
 
-  handleRemoveTag(tag) {
+  handleRemoveTag = (tag) => {
     const { tags, onChange } = this.props;
     const newTags = tags.slice();
     newTags.splice(tags.indexOf(tag), 1);
@@ -27,8 +27,9 @@ class SimpleTags extends Component {
 
     return (
       <div style={{ ...styles.box, ...boxStyle }}>
-        {tags.map((tag) => (
+        {tags.map((tag, idx) => (
           <Tag 
+            key={idx}
             style={tagStyle}
             onClose={this.handleRemoveTag}
           >

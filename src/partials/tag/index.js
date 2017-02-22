@@ -1,10 +1,11 @@
 import React, { Component, PropTypes } from 'react';
+import X from './close-btn';
 import styles from './styles';
 
 
 class Tag extends Component {
 
-  handleCloseClick() {
+  handleCloseClick = () => {
     const { onClose, children } = this.props;
     onClose(children);
   }
@@ -12,8 +13,12 @@ class Tag extends Component {
   render() {
     const { children, style } = this.props;
     return (
-      <div style={{ ...styles.tag, ...style }}>
+      <div style={{ ...styles.tag, ...style.tag }}>
         {children}
+        <X
+          style={{ ...style.close }}
+          onClick={this.handleCloseClick}
+        />
       </div>
     );
   }
