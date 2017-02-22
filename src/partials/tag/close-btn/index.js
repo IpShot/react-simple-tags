@@ -16,7 +16,7 @@ const X = ({
 );
 
 X.propTypes = {
-  className: PropTypes.object,
+  className: PropTypes.string,
   onClick: PropTypes.func,
 };
 
