@@ -1,18 +1,32 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import SimpleTags from '../index';
 import { Container } from './utils';
 
 
-storiesOf('SimpleTags', module)
-  .add('default', () => {
-    let tags = ['Goofy', 'Fox', 'Asteroid'];
+class Tags extends Component {
+  state = {
+    tags: ['Goofy', 'Fox', 'Asteroid'],
+  }
+
+  handleTagsChange = (tags) => {
+    this.setState({ tags });
+  }
+
+  render() {
     return (
-      <Container>
-        <SimpleTags 
-          tags={tags}
-          onChange={(t) => { tags = t }}
-        />
-      </Container>
+      <SimpleTags 
+        tags={this.state.tags}
+        onChange={this.handleTagsChange}
+      />
     );
-  });
+  }
+}
+
+
+storiesOf('SimpleTags', module)
+  .add('default', () => (
+    <Container>
+      <Tags />
+    </Container>
+  ));
