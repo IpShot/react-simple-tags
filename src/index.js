@@ -12,17 +12,19 @@ class SimpleTags extends Component {
   }
 
   handleAddTag = (tag) => {
-    const { tags, onChange } = this.props;
-    const newTags = tags.slice();
-    newTags.push(tag);
-    onChange(newTags);
+    if (tag.trim().length) {
+      const { tags, onChange } = this.props;
+      const newTags = tags.slice();
+      newTags.push(tag);
+      onChange(newTags);
+    }
   }
 
   handleRemoveTag = (tag) => {
     const { tags, onChange } = this.props;
     const newTags = tags.slice();
     if (tag && tag.length) {
-      newTags.splice(tags.indexOf(tag), 1);
+      newTags.splice(tags.indexOf(), 1);
     } else if (tags.length) {
       newTags.pop();
     }
