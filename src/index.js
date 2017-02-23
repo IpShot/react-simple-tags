@@ -24,7 +24,7 @@ class SimpleTags extends Component {
     const { tags, onChange } = this.props;
     const newTags = tags.slice();
     if (tag && tag.length) {
-      newTags.splice(tags.indexOf(), 1);
+      newTags.splice(tags.indexOf(tag), 1);
     } else if (tags.length) {
       newTags.pop();
     }
