@@ -1,10 +1,10 @@
 import React from 'react';
-import styles from './styles';
+import style from './style.css';
 
 export const Container = ({
   children,
 }) => (
-  <div style={styles.container}>
+  <div className={style.container}>
     {children}
   </div>
 );
